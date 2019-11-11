@@ -6,33 +6,41 @@
     android:columnCount="4"
     android:orientation="horizontal">
 
+    //第一行
     <EditText
         android:id="@+id/result"
+        android:layout_rowWeight="2"
         android:layout_columnSpan="4"
         android:layout_gravity="fill_horizontal"
-        android:layout_rowWeight="2"
-        android:inputType="none"
-        android:textSize="40dp"
+        android:background="@color/colorAccent"
         android:enabled="false"
-        android:textColor="#161313"
         android:gravity="right|bottom"
-        />
+        android:inputType="none"
+        android:textColor="#161313"
+        android:textSize="40dp" />
+
+    //第二行
     <Button
         android:id="@+id/cls"
-        android:text="C"
-        android:layout_columnSpan="2"
-        android:layout_gravity="fill_horizontal"
-        android:layout_columnWeight="2"
         android:layout_rowWeight="1"
-        android:textSize="20dp"/>
+        android:layout_columnSpan="2"
+        android:layout_columnWeight="2"
+        android:layout_gravity="fill_horizontal"
+        android:background="@color/colorPrimary"
+        android:text="C"
+        android:textSize="20dp" />
+
     <Button
         android:id="@+id/Backspace"
-        android:text="back"
-        android:layout_columnSpan="2"
-        android:layout_gravity="fill_horizontal"
-        android:layout_columnWeight="2"
         android:layout_rowWeight="1"
-        android:textSize="20dp"/>
+        android:layout_columnSpan="2"
+        android:layout_columnWeight="2"
+        android:layout_gravity="fill_horizontal"
+        android:background="@color/colorPrimary"
+        android:text="back"
+        android:textSize="20dp" />
+
+    //第三行
     <Button
         android:id="@+id/one"
         android:text="1"
@@ -57,6 +65,8 @@
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"
         android:textSize="20dp"/>
+
+    //第四行
     <Button
         android:id="@+id/four"
         android:text="4"
@@ -81,6 +91,8 @@
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"
         android:textSize="20dp"/>
+
+    //第五行
     <Button
         android:id="@+id/seven"
         android:text="7"
@@ -105,6 +117,8 @@
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"
         android:textSize="20dp"/>
+
+    //第六行
     <Button
         android:id="@+id/spot"
         android:text="."
@@ -129,5 +143,79 @@
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"
         android:textSize="20dp"/>
+
+    //第七行
+    <Button
+        android:id="@+id/sin"
+        android:text="sin"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:textSize="20dp"/>
+    <Button
+        android:id="@+id/cos"
+        android:text="cos"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:textSize="20dp"/>
+    <Button
+        android:id="@+id/tan"
+        android:text="tan"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:textSize="20dp"/>
+    <Button
+        android:id="@+id/sqr"
+        android:text="sqr"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:textSize="20dp"/>
+
+    //第八行
+    <Button
+        android:id="@+id/cm"
+        android:text="cm"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:textSize="20dp"/>
+    <Button
+        android:id="@+id/m"
+        android:text="m"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:textSize="20dp"/>
+    <Button
+        android:id="@+id/square"
+        android:text="square"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:textSize="15dp"/>
+    <Button
+        android:id="@+id/BS"
+        android:text="二进制"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:textSize="20dp"/>
+
+    //第九行
+    <Button
+        android:id="@+id/help"
+        android:layout_rowWeight="1"
+        android:layout_columnSpan="2"
+        android:layout_columnWeight="2"
+        android:layout_gravity="fill_horizontal"
+        android:background="@color/colorPrimary"
+        android:text="help"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/exit"
+        android:layout_rowWeight="1"
+        android:layout_columnSpan="2"
+        android:layout_columnWeight="2"
+        android:layout_gravity="fill_horizontal"
+        android:background="@color/colorPrimary"
+        android:text="exit"
+        android:textSize="20dp" />
+
 
 </GridLayout>

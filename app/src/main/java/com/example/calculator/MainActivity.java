@@ -9,10 +9,12 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private  StringBuilder show_equation=new StringBuilder();//显示运算式个private StringBuilder的字符串。每按一个按钮，只要满足要求，不是错误的输入，就调用append()方法，将按钮的值当字符存入这个字符串中
+    private  StringBuilder show_equation=new StringBuilder();//显示运算式各private StringBuilder的字符串。每按一个按钮，只要满足要求，不是错误的输入，就调用append()方法，将按钮的值当字符存入这个字符串中
 
     private  ArrayList calculate_equation;//计算式
-    private  int signal=0;//为0 时表示刚输入状态；为1 时表示当前在输出结果上继续输入
+    private  int signal=0;   //为0 时表示刚输入状态；为1时表示当前在输出结果上继续输入
+    EditText result = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,11 +38,22 @@ public class MainActivity extends AppCompatActivity {
         Button backspace=(Button)findViewById(R.id.Backspace);
         Button sub=(Button)findViewById(R.id.sub);
         Button add=(Button)findViewById(R.id.add);
+        Button sin=(Button)findViewById(R.id.sin);
+        Button cos=(Button)findViewById(R.id.cos);
+        Button tan=(Button)findViewById(R.id.tan);
+        Button sqr=(Button)findViewById(R.id.sqr);
+        Button square=(Button)findViewById(R.id.square);
+        Button cm=(Button)findViewById(R.id.cm);
+        Button m=(Button)findViewById(R.id.m);
+        Button BS=(Button)findViewById(R.id.BS);
+        Button help=(Button)findViewById(R.id.help);
+        Button exit=(Button)findViewById(R.id.exit);
         final Button equal=(Button)findViewById(R.id.equal);
         final Button point=(Button)findViewById(R.id.spot);
-        final EditText result=(EditText)findViewById(R.id.result);
+        result=(EditText)findViewById(R.id.result);   //显示屏初始化
         result.setCursorVisible(true); //android:cursorVisible设定光标为显示/隐藏，默认显示
 //        disableShowInput(result);
+
         zero.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
@@ -232,6 +245,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
         point.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -268,6 +282,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
         equal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -304,6 +319,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -380,6 +396,145 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        sin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //判断用户是否输入了内容
+                if(!(show_equation.toString().equals(""))) {
+                    signal=0;
+                    String temp=show_equation.toString();
+                    double a =Double.parseDouble(temp);
+                    double b = Math.sin(a);
+                    String c=""+b;
+                    result.setText(c);
+                }
+            }
+        });
+
+        cos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //判断用户是否输入了内容
+                if(!(show_equation.toString().equals(""))) {
+                    signal=0;
+                    String temp=show_equation.toString();
+                    double a =Double.parseDouble(temp);
+                    double b = Math.cos(a);
+                    String c=""+b;
+                    result.setText(c);
+                }
+            }
+        });
+
+        tan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //判断用户是否输入了内容
+                if(!(show_equation.toString().equals(""))) {
+                    signal=0;
+                    String temp=show_equation.toString();
+                    double a =Double.parseDouble(temp);
+                    double b = Math.tan(a);
+                    String c=""+b;
+                    result.setText(c);
+                }
+            }
+        });
+
+        square.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //判断用户是否输入了内容
+                if(!(show_equation.toString().equals(""))) {
+                    signal=0;
+                    String temp=show_equation.toString();
+                    double a =Double.parseDouble(temp);
+                    double b = a*a;
+                    String c=""+b;
+                    result.setText(c);
+                }
+            }
+        });
+
+        sqr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //判断用户是否输入了内容
+                if(!(show_equation.toString().equals(""))) {
+                    signal=0;
+                    String temp=show_equation.toString();
+                    double a =Double.parseDouble(temp);
+                    double b = Math.sqrt(a);
+                    String c=""+b;
+                    result.setText(c);
+                }
+            }
+        });
+
+        cm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //判断用户是否输入了内容
+                if(!(show_equation.toString().equals(""))) {
+                    signal=0;
+                    String temp=show_equation.toString();
+                    double dm = Double.valueOf(temp)/10;
+                    double m = Double.valueOf(temp)/100;
+                    String c = Double.valueOf(temp)+"cm="+dm+"dm"+"="+m+"m";
+                    result.setText(c);
+                }
+            }
+        });
+
+        m.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //判断用户是否输入了内容
+                if(!(show_equation.toString().equals(""))) {
+                    signal=0;
+                    String temp=show_equation.toString();
+                    double dm = Double.valueOf(temp)*10;
+                    double cm = Double.valueOf(temp)*100;
+                    String c = Double.valueOf(temp)+"m="+dm+"dm"+"="+cm+"cm";
+                    result.setText(c);
+                }
+            }
+        });
+
+        BS.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //判断用户是否输入了内容
+                if(!(show_equation.toString().equals(""))) {
+                    signal = 0;
+                    String temp = show_equation.toString();
+                    int a = Integer.parseInt(temp, 10);
+                    String c = Integer.toBinaryString(a);
+                    temp = "二进制:" + c;
+                    result.setText(temp);
+                }
+            }
+        });
+
+        help.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //判断用户是否输入了内容
+                String temp="这就是帮助。";
+                result.setText(temp);
+            }
+        });
+
+        exit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //判断用户是否输入了内容
+                System.exit(0);
+            }
+        });
+
+
     }
     //运算符优先级
     protected boolean operatorPriorityCompare(char operator1,char operator2)
